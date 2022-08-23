@@ -2,5 +2,5 @@
 for x in range(0, 10):
     for y in range(0, 10):
         if (x < y):
-            print("{}{}, ".format(x, y), end=' ')
+            print("{}{}, ".format(x, y), end='')
 print("{}{}".format(8, 9))
