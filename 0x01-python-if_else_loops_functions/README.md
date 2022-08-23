@@ -1,0 +1,23 @@
+<h1> This repo is for ALX 0x01-python-if_else_loops_functions project </h1>
+
+<p> Python is more flexible than C when it comes to control statements. Perhaps the
+most well-known statement is the <pre>if</pre> statement </p>
+
+<pre>
+if <condition>:
+	statements to execute if condition is true
+elif <condition>:
+	statements to execute if condition is true
+elif <condition>:
+	statements to execute if condition is true
+.
+.
+.
+
+else:
+	default condition to be executed if no condition is met
+</pre>
+
+<p> There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’
+ is short for ‘else if’, and is useful to avoid excessive indentation. An if … elif … elif …
+ sequence is a substitute for the switch or case statements found in other languages. </p>
