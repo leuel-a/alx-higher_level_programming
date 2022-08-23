@@ -13,8 +13,8 @@ listint_t *insert_node(listint_t **head, int number)
 
 	if (list == NULL)
 	{
-		list = &temp;
-		temp->next = NULL;
+		temp->next = list;
+		list = temp;
 		return (temp);
 	}
 	while(list)
