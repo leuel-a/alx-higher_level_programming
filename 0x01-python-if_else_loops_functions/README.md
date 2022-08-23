@@ -1,7 +1,7 @@
 <h1> 0x01-python-if_else_loops_functions Project </h1>
 
 <p> Python is more flexible than C when it comes to control statements. Perhaps the
-most well-known statement is the if statement </p>
+most well-known statement is the if-statement </p>
 
 <pre>
 if {condition}:
