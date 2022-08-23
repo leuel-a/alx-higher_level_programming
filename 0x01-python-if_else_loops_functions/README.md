@@ -1,4 +1,4 @@
-<h1> This repo is for ALX 0x01-python-if_else_loops_functions project </h1>
+<h1> 0x01-python-if_else_loops_functions project </h1>
 
 <p> Python is more flexible than C when it comes to control statements. Perhaps the
 most well-known statement is the if statement </p>
