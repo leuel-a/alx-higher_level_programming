@@ -1,14 +1,14 @@
-<h1> 0x01-python-if_else_loops_functions project </h1>
+<h1> 0x01-python-if_else_loops_functions Project </h1>
 
 <p> Python is more flexible than C when it comes to control statements. Perhaps the
 most well-known statement is the if statement </p>
 
 <pre>
-if <condition>:
+if {condition}:
 	statements to execute if condition is true
-elif <condition>:
+elif {condition}:
 	statements to execute if condition is true
-elif <condition>:
+elif {condition}:
 	statements to execute if condition is true
 .
 .
