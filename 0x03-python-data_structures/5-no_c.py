@@ -8,4 +8,3 @@ def no_c(my_string):
             continue
         new = new + my_string[i]
     return (new)
-
