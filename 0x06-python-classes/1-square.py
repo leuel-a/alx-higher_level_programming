@@ -15,4 +15,3 @@ class Square:
                 size: Size of the square to be instantiated
         """
         self.__size = size
-
