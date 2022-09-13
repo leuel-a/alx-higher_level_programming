@@ -3,6 +3,10 @@
 
 
 class Square:
+    """Square Class
+    Attributes:
+        __size: Size of the square
+    """
     def __init__(self, size=0):
         """Instantiation Methoo / Default Constructor
         :param size: Size of the square
