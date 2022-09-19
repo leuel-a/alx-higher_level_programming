@@ -103,9 +103,9 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        l = []
+        lr = []
         for i in range(0, self.__width + 1):
             for j in range(0, self.__height + 1):
-                        l.append('#')
-            l.append('\n')
-        return "".join(l)
+                lr.append('#')
+            lr.append('\n')
+        return "".join(lr)
