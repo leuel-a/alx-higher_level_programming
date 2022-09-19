@@ -1,22 +1,51 @@
 #!/usr/bin/python3
-"""Area and Perimeter"""
+"""
+    This is the "1-rectangle" module.
+    The 1-rectangle module supplies one class. This class
+    defines a rectangle
+"""
 
 
 class Rectangle:
-    """Defines the implementation of a rectangle"""
-
+    """
+        This is the Rectangle class
+        Attritbutes:
+            __width: Width of rectangle
+            __height: Height of rectangle
+    """
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        """
+            Instantiation methods / Constructor
+            Args:
+                @width: Width of rectangle
+                @height: Height of rectangle
+        """
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = width
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = height
 
     @property
     def width(self):
-        """Property retriever, for retreiving"""
+        """
+        Getter for the width of the rectangle
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Property setter, for setting"""
+        """
+        Setter for the width of the rectangle
+        Args:
+            @value: Value of the width
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -25,31 +54,40 @@ class Rectangle:
 
     @property
     def height(self):
-        """Property retriever, for retreiving
-        the rectangle height
+        """
+        Getter for the height
         """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Setter for the height
+        Args:
+            @value: Value of the height
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    def area(self):
-        """Public instance method that returns
-        the rectangle area
+    def area(self)
         """
-        rectangle_area = self.__height * self.__width
-        return rectangle_area
+        Finds the area of the rectangle
 
-    def perimeter(self):
-        """Public instance method that returns the
-        rectangle perimeter
+        Return:
+            int. Area of the rectangle
         """
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        rectangle_params = ((2 * self.__height) + (2 * self.__width))
-        return rectangle_params
+        area = self.__width * self.__height
+        return area
+
+    def perimeter(self)
+        """
+        Finds the perimeter of the rectangle
+
+        Return:
+            int. Perimeter of the rectangle
+        """
+        perimeter = 2 * (self.__width + self.__height)
+        return perimeter
