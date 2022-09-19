@@ -6,6 +6,7 @@
     defines a rectangle
 """
 
+
 class Rectangle:
     """
         This is the Rectangle class
@@ -21,9 +22,18 @@ class Rectangle:
                 @width: Width of rectangle
                 @height: Height of rectangle
         """
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
         self.__width = width
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         self.__height = height
-    
+
     @property
     def width(self):
         """
@@ -35,7 +45,7 @@ class Rectangle:
     def width(self, value):
         """
         Setter for the width of the rectangle
-        
+
         Args:
             @value: Value of the width
         """
