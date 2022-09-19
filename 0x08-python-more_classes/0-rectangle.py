@@ -4,6 +4,8 @@
 
     The 0-rectangle module supplies a class that defines a rectangle.
 """
+
+
 class Rectangle:
     """
         This is the Rectangle class.
