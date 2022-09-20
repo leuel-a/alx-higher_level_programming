@@ -10,6 +10,7 @@ class Rectangle:
         height: The height of the rectange
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
@@ -66,7 +67,7 @@ class Rectangle:
 
         rect = []
         for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
@@ -83,3 +84,26 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Finds the biggest rectangle based on the area
+
+        Args:
+            rect_1: First Rectangle
+            rect_2: Second Rectangle
+
+        Return:
+            Rectangle. The largest rectangle of the the two
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() > rect_2.area():
+            return rect_1
+        elif rect_1.area() < rect_2.area():
+            return rect_2
+        else:
+            return rect_1
