@@ -18,14 +18,7 @@ class Square(Rectangle):
             size (int): this is the size of the rectangle
         """
         self.__size = size
-
-    def area(self):
-        """Finds the area of the square
-
-        Return:
-            int. The area of the square
-        """
-        return self.__size ** 2
+        super().__init__(self.__size, self.__size)
 
     def __str__(self):
         """Overrides the __str__ magic method"""
