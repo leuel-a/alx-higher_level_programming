@@ -54,4 +54,5 @@ class Student:
                 attributes that the student instance will assume
 
         """
-        self.__dict__ = json
+        for k, v in json.items():
+            setattr(self, k, v)
