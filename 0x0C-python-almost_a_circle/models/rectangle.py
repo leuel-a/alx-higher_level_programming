@@ -154,7 +154,11 @@ class Rectangle(Base):
         """Prints the rectangle to the stdout using the '#'
         character."""
 
+        for a in range(0, self.__y):
+            print('\n', end='')
         for i in range(0, self.__height):
+            for k in range(0, self.__x):
+                print(" ", end='')
             for j in range(0, self.__width):
                 print('#', end='')
             print('\n', end='')
