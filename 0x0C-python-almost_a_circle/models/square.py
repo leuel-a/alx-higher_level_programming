@@ -88,3 +88,11 @@ class Square(Rectangle):
             for attributes, value in kwargs.items():
                 if hasattr(self, attributes):
                     setattr(self, attributes, value)
+
+    def to_dictionary(self):
+        """Returns a dictionary representation of Square instance"""
+        return {
+                'id': self.id,
+                'size': self.width,
+                'x': self.x,
+                'y': self.y}
