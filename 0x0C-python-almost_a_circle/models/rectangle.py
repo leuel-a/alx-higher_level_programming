@@ -169,7 +169,7 @@ class Rectangle(Base):
             " " + "{}/{}".format(self.__x, self.__y) +\
             " - " + "{}/{}".format(self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns arguments to each attribute.
 
         Args:
@@ -188,3 +188,7 @@ class Rectangle(Base):
                     self.__x = args[3]
                 elif i == 4:
                     self.__y = args[4]
+        elif kwargs:
+            for attribute, value in kwargs.items():
+                if hasattr(self, attribute):
+                    setattr(self, attribute, value)
