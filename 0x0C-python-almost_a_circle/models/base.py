@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This is the 'base' module"""
 
-
 import json
 
 
@@ -40,3 +39,21 @@ class Base:
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file
+
+        Args:
+            list_objs: is a list of instances who inherits of 'Base'
+
+        """
+        filename = cls.__name__ + ".json"
+        with open(filename, "w", encoding="utf-8") as f:
+            if list_objs is None:
+                json.dump(f, [])
+            else:
+                list_dictionaries = []
+                for i in list_objs:
+                    list_dictionaries.append(i.to_dictionary())
+                f.write(Base.to_json_string(list_dictionaries))
