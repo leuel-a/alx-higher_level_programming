@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is the 'base' module"""
 
+import os
 import json
 
 
@@ -87,3 +88,13 @@ class Base:
                 new = cls(1)
                 new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        if os.path.isfile(filename):
+            with open(filename, "r", encoding="utf-8") as f:
+                list_dicts = Base.from_json_string(f.read())
+            return [cls.create(**dic) for dic in list_dicts]
+        return []
