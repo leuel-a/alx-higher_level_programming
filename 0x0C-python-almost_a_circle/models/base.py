@@ -51,7 +51,7 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w", encoding="utf-8") as f:
             if list_objs is None:
-                json.dump(f, [])
+                f.write("[]")
             else:
                 list_dictionaries = []
                 for i in list_objs:
