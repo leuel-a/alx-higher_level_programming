@@ -79,5 +79,9 @@ class Base:
                 pointer to a dictionary
 
         """
-        dummy = cls(1, 1)
-        dummy.update(**dictionary)
+        if cls.__name__ == "Rectangle":
+            new = cls(1, 1)
+            new.update(**dictionary)
+        else:
+            new = cls(1)
+            new.update(**dictionary)
