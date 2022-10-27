@@ -6,10 +6,7 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Square Class
     Attributes:
-        id (int): id of a Square instance
-        size (int): size of a Square instance
-        x (int): x position of a Square instance
-        y (int): y position of a Square instance
+        __size (int): size of a Square instance
     """
     def __init__(self, size, x=0, y=0, id=None):
         """Instantiation Method / Default Constructor
@@ -65,4 +62,8 @@ class Square(Rectangle):
                     setattr(self, attr[i], args[i])
         else:
             for k, v in kwargs.items():
-                setattr(self, k, v)
+                if k == "size":
+                    setattr(self, "width", v)
+                    setattr(self, "height", v)
+                else:
+                    setattr(self, k, v)
