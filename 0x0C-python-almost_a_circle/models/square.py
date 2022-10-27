@@ -16,11 +16,6 @@ class Square(Rectangle):
             y (int, optional): y position of new Square instance
             id (int): id of new Square instance
         """
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        if size <= 0:
-            raise ValueError("width must be > 0")
-        self.__size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -31,7 +26,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """Getter for size of Square instance"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, size):
@@ -40,7 +35,8 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if size <= 0:
             raise ValueError("width must be > 0")
-        self.__size = size
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """Updates attributes of Square instance
