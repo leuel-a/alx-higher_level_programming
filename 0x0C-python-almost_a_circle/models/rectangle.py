@@ -131,7 +131,7 @@ class Rectangle(Base):
                 4th argument should be the x attribute
                 5th argument should be the y attribute
         """
-        if args:
+        if args and len(args) != 0:
             i = 0
             for v in args:
                 if i == 0:
@@ -145,3 +145,6 @@ class Rectangle(Base):
                 elif i == 4:
                     self.__y = v
                 i += 1
+        elif kwargs:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
