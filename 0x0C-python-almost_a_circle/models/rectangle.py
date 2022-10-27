@@ -132,29 +132,10 @@ class Rectangle(Base):
                 5th argument should be the y attribute
             **kwargs (dict): Key/Value pairs for attributes
         """
-        if args and len(args) != 0:
-            i = 0
-            for v in args:
-                if i == 0:
-                    self.id = v
-                elif i == 1:
-                    self.__width = v
-                elif i == 2:
-                    self.__height = v
-                elif i == 3:
-                    self.__x = v
-                elif i == 4:
-                    self.__y = v
-                i += 1
-        elif kwargs:
+        if args is not None and len(args) is not 0:
+            attr = ["width", "height", "x", "y", "id"]
+            for i in range(len(args)):
+                setattr(self, attr[i], args[i])
+        else:
             for k, v in kwargs.items():
-                if k == 'id':
-                    self.id = v
-                elif k == 'width':
-                    self.width = v
-                elif k == 'height':
-                    self.height = v
-                elif k == 'x':
-                    self.x = v
-                elif k == 'y':
-                    self.y = v
+                setattr(self, k, v)
