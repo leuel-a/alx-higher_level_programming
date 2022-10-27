@@ -133,7 +133,7 @@ class Rectangle(Base):
             **kwargs (dict): Key/Value pairs for attributes
         """
         if args is not None and len(args) is not 0:
-            attr = ["width", "height", "x", "y", "id"]
+            attr = ["id", "width", "height", "x", "y"]
             for i in range(len(args)):
                 setattr(self, attr[i], args[i])
         else:
