@@ -52,7 +52,7 @@ class Square(Rectangle):
                 4th argument should be the y attribute
             **kwargs (dict): Key/Value pairs for attributes
         """
-        if args is not None and len(args) is not 0:
+        if args and len(args) != 0:
             attr = ["id", "size", "x", "y"]
             for i in range(len(args)):
                 if attr[i] == 'size':
