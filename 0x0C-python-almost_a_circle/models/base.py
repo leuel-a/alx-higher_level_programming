@@ -37,7 +37,7 @@ class Base:
         list_dicts = []
         for instance in list_objs:
             list_dicts.append(instance.to_dictionary())
-        json_str = cls.to_json_string(list_dicts)
+        json_str = Base.to_json_string(list_dicts)
 
         filename = cls.__name__ + ".json"
         with open(filename, "w", encoding="utf-8") as f:
