@@ -34,10 +34,14 @@ class Base:
         Args:
             list_objs (list): list of instances who inherits from Base
         """
-        list_dicts = []
-        for instance in list_objs:
-            list_dicts.append(json.loads(cls.to_json_string(instance.
-                                                            to_dictionary())))
         filename = cls.__name__ + ".json"
+
+        list_dicts = []
+        if list_objs is not None:
+            for instance in list_objs:
+                list_dicts.append(json.loads(cls.to_json_string(
+                    instance.to_dictionary()
+                )))
+
         with open(filename, "w", encoding="utf-8") as f:
             json.dump(list_dicts, f)
