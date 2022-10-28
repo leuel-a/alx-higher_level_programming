@@ -41,4 +41,4 @@ class Base:
 
         filename = cls.__name__ + ".json"
         with open(filename, "w", encoding="utf-8") as f:
-            f.write(json_str)
+            json.dump(json_str, f)
