@@ -21,7 +21,6 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer([1, "Leuel"])
         self.assertEqual(max_integer(["Leuel"]), "Leuel")
-            
 
 
 if __name__ == '__main__':
