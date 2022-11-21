@@ -16,6 +16,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer(), None)
         self.assertEqual(max_integer([1, 2, 3, float("NaN")]), 3)
+        self.assertEqual(max_integer([1, 2, 3, float("inf")]), float("inf"))
+        self.assertEqual(max_integer([1, 2, 3, float("-inf")]), 3)
 
     def test_string(self):
         """Tests for string inputs"""
