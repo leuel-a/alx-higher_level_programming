@@ -14,5 +14,6 @@ const argv = process.argv;
 if (isNaN(argv[2] * 1)) {
   console.log('Not a number');
 } else {
-  console.log(argv[2] * 1);
+  const firstArgNum = argv[2] * 1;
+  console.log('My number: ' + firstArgNum);
 }
