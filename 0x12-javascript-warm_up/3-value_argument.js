@@ -3,9 +3,9 @@
  * Prints the first argument(only) passed to it
  */
 
-args = process.argv;
+const args = process.argv;
 if (args[2] === undefined) {
-    console.log('No argument');
+  console.log('No argument');
 } else {
-    console.log(args[2]);
+  console.log(args[2]);
 }
