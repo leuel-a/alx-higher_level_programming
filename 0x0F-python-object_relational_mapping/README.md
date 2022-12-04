@@ -1,4 +1,7 @@
 # Python - Object-Relational Mapping
+
+![Project Image](https://alx-intranet.hbtn.io/images/challenge2022/get-started.jpg)
+
 ## Background Context
 In this project, you will link two amazing worlds: Databases and Python!
 
@@ -31,11 +34,7 @@ for state in session.query(State).order_by(State.id).all(): # HERE: no SQL query
     print("{}: {}".format(state.id, state.name))
 session.close()
 ```
-Do you see the difference? Cool, right?
-
-The biggest difficulty with ORM is: The syntax!
-
-Indeed, all of them have the same type of syntax, but not always. Please read tutorials and don’t read the entire documentation before starting, just jump on it if you don’t get something.
+Do you see the difference? Cool, right? The biggest difficulty with ORM is: *The syntax!* Indeed, all of them have the same type of syntax, but not always. Please read tutorials and don’t read the entire documentation before starting, just jump on it if you don’t get something.
 
 
 
