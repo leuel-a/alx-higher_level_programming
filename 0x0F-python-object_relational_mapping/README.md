@@ -41,6 +41,6 @@ Do you see the difference? Cool, right? The biggest difficulty with ORM is: *The
 ### Project Tasks
 
 - [x] Task 0: Get all states
-- [ ] Task 1: Filter states
+- [x] Task 1: Filter states
 - [ ] Task 2: Filter states by user input
 - [ ] Task 3: SQL Injection...
