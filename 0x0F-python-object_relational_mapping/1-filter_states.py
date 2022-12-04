@@ -19,7 +19,7 @@ def list_states_begin_N() -> None:
     )
     # Creating the cursor object
     cur = db.cursor()
-    cur.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY id')
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
     for i in cur.fetchall():
         print(i)
 
