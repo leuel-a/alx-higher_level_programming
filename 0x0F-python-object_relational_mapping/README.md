@@ -37,6 +37,6 @@ The biggest difficulty with ORM is: The syntax!
 
 Indeed, all of them have the same type of syntax, but not always. Please read tutorials and don’t read the entire documentation before starting, just jump on it if you don’t get something.
 
-###Project Tasks
+######Project Tasks
 
-[ ] Task 0: Get all states
+- [ ] Task 0: Get all states
