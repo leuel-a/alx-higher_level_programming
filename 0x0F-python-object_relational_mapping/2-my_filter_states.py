@@ -19,13 +19,16 @@ def my_filter_states() -> None:
     )
 
     # Creating the cursor
+    query = "SELECT *\n" \
+            "FROM states\n" \
+            "WHERE name='{}' ORDER BY id".format(args[3])
     cur = db.cursor()
-    cur.execute("SELECT *\n"
-                "FROM states\n"
-                "WHERE name='{}'\n"
-                "ORDER BY id".format(args[3]))
+    cur.execute(query)
     for state in cur.fetchall():
         print(state)
+
+    cur.close()
+    db.close()
 
 
 if __name__ == '__main__':
