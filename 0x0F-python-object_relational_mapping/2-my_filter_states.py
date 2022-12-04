@@ -21,7 +21,7 @@ def my_filter_states() -> None:
     # Creating the cursor
     query = "SELECT *\n" \
             "FROM states\n" \
-            "WHERE name='{}' ORDER BY id".format(args[3])
+            "WHERE name LIKE BINARY '{}' ORDER BY id".format(args[3])
     cur = db.cursor()
     cur.execute(query)
     for state in cur.fetchall():
