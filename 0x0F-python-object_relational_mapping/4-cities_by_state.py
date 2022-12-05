@@ -1,21 +1,34 @@
 #!/usr/bin/python3
-"""
-lists all cities from the database hbtn_0e_4_usa
-"""
-if __name__ == "__main__":
+"""Lists all cities from the database hbtn_0e_4_usa"""
+import sys
+import MySQLdb
 
-    import MySQLdb
-    from sys import argv
 
-    conect = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                             passwd=argv[2], db=argv[3], charset="utf8")
-    cursor = conect.cursor()
-    cursor.execute("""SELECT cities.id, cities.name, states.name
-    FROM cities
-    LEFT JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id ASC""")
-    query_rows = cursor.fetchall()
-    for row in query_rows:
-        print(row)
-    cursor.close()
-    conect.close()
+def cities_by_states() -> None:
+    """Lists all cities from DB hbtn_0e_4_usa"""
+    args = sys.argv[1:]
+    # Connecting to the database
+    db = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=args[0],
+        passwd=args[1],
+        db=args[2]
+    )
+
+    # Creating the cursor
+    cur = db.cursor()
+
+    # Query from DB
+    query = "SELECT cities.id, cities.name, states.name\n" \
+            "FROM cities\n" \
+            "\tINNER JOIN states" \
+            "\tON (cities.state_id = states.id)" \
+            "ORDER BY cities.id"
+    cur.execute(query)
+    for city in cur.fetchall():
+        print(city)
+
+
+if __name__ == '__main__':
+    cities_by_states()
