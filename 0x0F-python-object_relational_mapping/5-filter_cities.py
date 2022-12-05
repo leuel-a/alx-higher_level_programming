@@ -1,27 +1,39 @@
 #!/usr/bin/python3
-"""
-lists all cities from the database
-"""
-if __name__ == "__main__":
+"""Takes in the name of a state as an argument and
+lists all cities of that state, using the database
+hbtn_0e_4_usa"""
+import sys
+import MySQLdb
 
-    import MySQLdb
-    from sys import argv
 
-    cont = 0
-    conect = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                             passwd=argv[2], db=argv[3], charset="utf8")
-    cursor = conect.cursor()
-    cursor.execute("""SELECT cities.id, cities.name, states.name
-    FROM cities
-    LEFT JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id ASC""")
-    query_rows = cursor.fetchall()
-    for row in query_rows:
-        if row[2] == argv[4]:
-            if cont > 0:
-                print(", ", end="")
-            print(row[1], end="")
-            cont = cont + 1
+def filter_cities() -> None:
+    """Lists all cities of a state supplied as an argument"""
+    args = sys.argv[1:]
+    # Connecting to the Database
+    db = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=args[0],
+        passwd=args[1],
+        db=args[2]
+    )
+
+    # Creating the cursor
+    cur = db.cursor()
+
+    # Querying the DB
+    query = "SELECT name FROM cities WHERE state_id LIKE \n" \
+            "(SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY id;"
+    cur.execute(query, (args[3], ))
+    first = True
+    for row in cur.fetchall():
+        if first is True:
+            print("{}".format(row[0]), end='')
+            first = False
+        else:
+            print(", {}".format(row[0]), end='')
     print()
-    cursor.close()
-    conect.close()
+
+
+if __name__ == '__main__':
+    filter_cities()
