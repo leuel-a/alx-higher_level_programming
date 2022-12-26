@@ -1,7 +1,7 @@
 # JavaScript - Objects, Scopes and Closures
 A JavaScript object is an entity having state and behavior (properties and method). JavaScript is an <u>object-based</u> language. Everything is an object in JavaScript. JavaScript is **template based** not class based. Here, we don't create class to get the object. But, we direct create objects.
 
-![JavaScript_Object_Cheat_Sheet](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Flearnjavascript%2Fcomments%2Fkobizf%2Fjavascript_objects_in_nutshell%2F&psig=AOvVaw3K3YgnZ-JPZlrVDRxAaDwm&ust=1672109935483000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIiT8IellvwCFQAAAAAdAAAAABAE)
+![JavaScript_Object_Cheat_Sheet](https://preview.redd.it/9nxtqtho6q861.jpg?width=960&crop=smart&auto=webp&s=3234d5e9d9178b049be200cfd5e31aa286a8637a)
 
 ### Project Tasks
 ###### Mandatory Tasks
