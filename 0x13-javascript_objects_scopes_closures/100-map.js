@@ -2,7 +2,13 @@
 
 // Importing for '100-data.js' the list
 const list = require('./100-data').list;
-const newList = list.map(x => x * list.indexOf(x));
 
 console.log(list);
+
+// Create a new list by using a map
+let i = 0;
+const newList = list.map(function (x) {
+  return x * i++;
+});
+
 console.log(newList);
