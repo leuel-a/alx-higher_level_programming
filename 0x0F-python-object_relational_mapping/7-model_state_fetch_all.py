@@ -9,15 +9,9 @@ from model_state import Base, State
 
 def main():
     """Main method / Driver method"""
-    connection_url = sqlalchemy.engine.URL.create(
-        drivername='mysql+mysqldb',
-        username=sys.argv[1],
-        password=sys.argv[2],
-        host='localhost',
-        port=3306,
-        database=sys.argv[3]
-    )
-    engine = create_engine(connection_url)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]
+    ))
     session = sessionmaker(bind=engine)
     session_obj = session()
 
