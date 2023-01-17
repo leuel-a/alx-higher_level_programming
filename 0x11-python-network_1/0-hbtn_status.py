@@ -11,9 +11,9 @@ def main() -> None:
 
     utf_content = response_data.decode("utf-8")
     print("Body response:")
-    print("\ttype: {}".format(type(response_data)))
-    print("\tcontent: {}".format(response_data))
-    print("\tutf8 content: {}".format(utf_content))
+    print(f"\t- type: {type(response_data)}")
+    print(f"\t- content: {response_data}")
+    print(f"\t- utf8 content: {utf_content}")
 
 
 if __name__ == '__main__':
