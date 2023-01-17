@@ -15,5 +15,5 @@ request(args[2], (err, response, body) => {
     if (err) {
       console.log(err);
     }
-  })
-})
+  });
+});
