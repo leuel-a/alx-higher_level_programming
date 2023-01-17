@@ -10,10 +10,10 @@ def main() -> None:
         response_data = response.read()
 
     utf_content = response_data.decode("utf-8")
-    print("Body response: \n"
-          f"\t- type: {type(response_data)}\n"
-          f"\t- content: {response_data}\n"
-          f"\t- utf-8 content: {utf_content}")
+    print("Body response:")
+    print(f"\ttype: {type(response_data)}")
+    print(f"\tcontent: {response_data}")
+    print(f"\tutf8 content: {utf_content}")
 
 
 if __name__ == '__main__':
