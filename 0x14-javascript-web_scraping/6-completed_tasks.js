@@ -9,20 +9,17 @@ request(args[2], (err, response, body) => {
     return;
   }
 
-  let count = 0;
   const completedTasks = {};
   const result = JSON.parse(body);
-  for (let i = 1; i <= 10; i++) {
-    for (let j = 0; j < result.length; j++) {
-      if (result[j].userId === i) {
-        if (result[j].completed === true) {
-          count++;
-        }
+  for (let i = 0; i < result.length; i++) {
+    const completed = result[i].completed;
+    const key = result[i].userId.toString();
+    if (completed === true) {
+      if (completedTasks[key]) {
+        completedTasks[key]++;
+      } else {
+        completedTasks[key] = 1;
       }
-    }
-    completedTasks[i] = count;
-    if (count !== 0) {
-      count = 0;
     }
   }
   console.log(completedTasks);
