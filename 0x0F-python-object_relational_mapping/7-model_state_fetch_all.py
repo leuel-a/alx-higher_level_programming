@@ -18,6 +18,8 @@ def main():
     for instance in session_obj.query(State).order_by(State.id):
         print(f'{instance.id}: {instance.name}')
 
+    session_obj.close()
+
 
 if __name__ == '__main__':
     main()
