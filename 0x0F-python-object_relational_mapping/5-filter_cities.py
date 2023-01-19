@@ -13,7 +13,8 @@ if __name__ == '__main__':
         db=sys.argv[3]
     )
     cur = db.cursor()
-    query = 'SELECT name FROM cities WHERE cities.state_id = (SELECT id FROM states WHERE name LIKE BINARY %s)'
+    query = 'SELECT name FROM cities WHERE cities.state_id = (SELECT\
+    id FROM states WHERE name LIKE BINARY %s)'
     cur.execute(query, (sys.argv[4], ))
     check = 0
     for city in cur.fetchall():
