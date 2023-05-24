@@ -9,16 +9,12 @@ request(url, (error, response, body) => {
   }
 
   // Check if the response does not contain a valid JSON
-  try {
-    todos = JSON.parse(body);
-  } catch (error) {
-    return console.log(error);
-  }
+  const todos = JSON.parse(body);
 
   const result = {};
   todos.forEach(todo => {
     if (todo.completed && result[todo.userId] === undefined) {
-      result[todo.userId] = 1
+      result[todo.userId] = 1;
     } else if (todo.completed) {
       result[todo.userId] += 1;
     }
