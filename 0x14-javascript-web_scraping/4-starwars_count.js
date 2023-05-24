@@ -13,7 +13,7 @@ request(url, (error, response, body) => {
   let count = 0;
   for (let movie of BodyResponse) {
     for (let actor of movie.characters) {
-      if (actor === WedgeAntilliesURL) {
+      if (actor.endsWith('18/')) {
         count++;
       }
     }
