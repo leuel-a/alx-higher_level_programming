@@ -10,20 +10,18 @@ request(url, (error, response, body) => {
 
   // Check if the response does not contain a valid JSON
   try {
-    body = JSON.parse(body);
+    todos = JSON.parse(body);
   } catch (error) {
     return console.log(error);
   }
 
   const result = {};
-  for (const task of body) {
-    if (task.userId in result === false) {
-      result[task.userId] = 0;
+  todos.forEach(todo => {
+    if (todo.completed && result[todo.userId] === undefined) {
+      result[todo.userId] = 1
+    } else if (todo.completed) {
+      result[todo.userId] += 1;
     }
-
-    if (task.completed === true) {
-      result[task.userId]++;
-    }
-  }
+  });
   console.log(result);
 });
